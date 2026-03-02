@@ -23,9 +23,12 @@ Block 4: 256 Filters to capture high-level abstract features and complex facial 
 Regularization: A Dropout(0.25) layer is applied after every block to prevent overfitting.
 Classifier: A Dense Layer of 512 units feeding into a 7-class Softmax activation function.
 
-#🛠️ Optimization Strategies
+#🛠️ Optimization Strategies.
 To overcome the inherent biases of the dataset, specialized optimization techniques were utilized:
 Dampened Class Weights: Used the Square Root method to handle severe class imbalance. This reduced the raw inverse frequency weight of the "Disgust" class from 9.41 down to 3.07, preventing the model from over-predicting the minority class.
 Dynamic Learning Rate: Implemented ReduceLROnPlateau, which halves the learning rate if the validation loss fails to improve for 3 consecutive epochs, allowing the model to settle safely into the global minimum.
 
-#📈 Results & PerformanceThe customized CNN successfully aligns with human-level performance benchmarks on this specific dataset.Overall Test Accuracy: 65.51% (improved from a 50% baseline).Key F1-Scores: Happy achieved 87%, Surprise reached 75%, and Disgust hit 56% (a significant achievement given it is the minority class)
+#📈 Results & Performance
+The customized CNN successfully aligns with human-level performance benchmarks on this specific dataset.
+Overall Test Accuracy: 65.51% (improved from a 50% baseline).
+Key F1-Scores: Happy achieved 87%, Surprise reached 75%, and Disgust hit 56% (a significant achievement given it is the minority class)
